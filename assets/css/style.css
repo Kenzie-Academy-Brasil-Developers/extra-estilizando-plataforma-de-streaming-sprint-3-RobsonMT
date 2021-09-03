@@ -29,7 +29,13 @@ family=Lato -> Títulos, textos
 /* FONTS */
 
 /* VARIÁVEIS */
-:root{}
+:root{
+    --font-geral: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    --bg-body: #141414;
+    --menu-color: #e5e5e5;
+    --menu-active: #ffffff;
+    --menu-hover: #b3b3b3;
+}
   
 /* GERAL */
 html, body, figure, div, input, textarea, p, h1, h2, h3, h4, h5, h6, ul{
@@ -45,21 +51,12 @@ img{
 div.flex{
     display: flex;
 }
-div.full-container{
-    width: 100%;
-    max-width: 1850px;
-    margin:0 auto;
-}
-div.large-container{
-    width: 100%;
-    max-width: 1170px;
-    margin:0 auto;
-}
+
 div.container{
     width: 100%;
-    max-width: 1140px;
     margin:0 auto;
-}
+    padding: 30px;
+} 
 /* GERAL */
   
 /* HTML */
@@ -67,20 +64,244 @@ html{}
 /* HTML */
   
 /* BODY */
-body{}
+body{
+    font-family: var(--font-geral);
+    background-color: var(--bg-body);
+}
 /* BODY */
   
 /* HEADER */
-header{}
+header{
+    Background: linear-gradient(to bottom, rgba(0,0,0,.7) 10%, rgba(0,0,0,0));
+    height: 60px;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    transform: translateY(-40px);
+}
+header .container{
+   
+}
+
+
+header .container .flex{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+header .logo figure img{
+    width: 70px;
+}
+
+header .logo .hidden{
+    text-indent: -99999px;
+}
+
+/*icon-pequisar-aparecer-no-desktop*/
+header .pesquisar{
+    display: none;
+}
+
+header .usuario img{
+    width: 28px;
+    border-radius: 5px;
+}
+
+header nav{
+    color: var(--menu-active);
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+header nav span{
+    background-color: lawngreen;
+}
+
+/*menu-lista-aparecer-no-desktop*/
+header nav .menu--area{
+    display: none;
+}
+
+header nav a{
+    text-transform: capitalize;
+    text-decoration-line: none;
+    text-align: start;
+    padding-top: 10px;
+}
 /* HEADER */
   
+
+
+
+
+/* SEÇÃO DESTAQUE */
+
+main.pagina-inicial{
+   
+}
+
+main .secao-destaque{
+    
+}
+
+main .secao-destaque{
+    background-image: url("../img/movies/um-maluco-no-pedaco.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: fill;
+
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    
+}
+
+main .secao-destaque .container{
+    /* background-color: rgb(190, 220, 20); */
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+main .secao-destaque-conteudo{
+    /* background-color: cornflowerblue; */
+    height: inherit;
+    overflow: hidden;
+    padding: 10px;
+}
+
+main .secao-destaque-conteudo figure{
+    /* display: inline-flex; */
+    /* align-items: baseline; */
+}
+main .secao-destaque-conteudo figcaption{
+   color: var(--menu-active);
+   font-weight: 600;
+   margin-bottom: 10px;
+}
+
+main .secao-destaque-conteudo figure img{
+    max-width: 160px;
+}
+
+main .secao-destaque-conteudo>p{
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+    color: var(--menu-active);
+    font-size: 12px;
+
+    padding-right: 10px;
+
+    white-space: wrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    
+}
+
+main .secao-destaque-buttons button{
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    margin:10px 5px;
+}
+main .secao-destaque-buttons .mais-informacoes{
+    Background: rgba(109,109,110,0.7);
+    color: var(--menu-active);
+}
+main .secao-destaque-buttons .mais-informacoes:hover{
+    background-color: rgba(109,109,110,0.4);
+}
+main .secao-destaque-buttons .assistir{
+    background-color: var(--menu-active);
+    color: #000000;
+}
+main .secao-destaque-buttons .assistir:hover{
+    background-color: rgba(255,255,255,0.75);
+}
+
+/* SEÇÃO DESTAQUE */
+
+/* SEÇÃO CATALOGO */
+section.secao-catalogo{
+   
+}
+section#secao-continuar-assistindo{
+    background: linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#141414 68%,#141414 100%);
+}
+section.secao-catalogo .secao-catalogo-titulo{
+    color: var(--menu-color);
+    font-size: 17px;
+}
+
+section.secao-catalogo .flex{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
+}
+
+section.secao-catalogo .flex-column a{
+    max-width: 50%;
+}
+/* SEÇÃO CATALOGO */
+
+
 /* FOOTER */
-footer{}
+footer{
+    border-top: 1px solid rgb(128 128 128 / 26%);
+    color: gray;
+    background-color: chartreuse;
+}
+footer .container{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    margin:0 auto;
+    background: #000;
+}
+footer .flex{
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+footer .flex-column{
+    display: inline;
+}
+footer .flex ul{
+    text-align: center;
+}
+footer .flex ul>li{
+   padding: 10px;
+}
+footer nav a{
+    color: gray;
+    text-decoration: none;
+    font: 13px;
+}
+footer .redes-sociais{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 90%;
+}
+footer .redes-sociais li a img{
+    width: 20px;
+}
+footer .copyright p{
+    margin-top: 10px;
+    font-size: 11px;
+    text-align: center;
+}
 /* FOOTER */
 
-/* INICIAL */
-main{}
-/* INICIAL */
+
 
 /* EXTRAS */
 
@@ -99,5 +320,69 @@ main{}
 /* MEDIA QUERIES */
     @media screen and (min-width: 400px) {}
   
-    @media screen and (min-width: 800px) {}
+    @media screen and (min-width: 800px) {
+
+        header{
+            font-size: 14px;
+        }
+        header .logo figure img{
+            max-width: 92px;
+        }
+        header .usuario img{
+            width: 32px;
+        }
+        header nav ul a{
+            color: var(--menu-color);
+        }
+        header nav ul a:hover{
+            color: var(--menu-hover);
+        }
+        header nav ul a:active{
+            color: var(--menu-active);
+        }
+
+
+
+        main .secao-destaque-conteudo figure{
+        }
+
+        main .secao-destaque-conteudo figure img{
+            max-width: 650px;
+            width: 220px;
+
+        }
+        main .secao-destaque-conteudo p{
+            color: var(--menu-active);
+            font-size: 26px;
+            text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+        }
+
+        main .secao-destaque-buttons button{
+            font-size: 22px;
+        }
+
+
+        section.secao-catalogo .secao-catalogo-titulo{
+
+            font-size: 26px;
+        }
+
+
+        section.secao-catalogo .flex-column a{
+            max-width: 287px;
+        }
+
+
+
+
+
+        img{
+            max-width: 800px;
+        }
+        
+        div.container{
+            max-width: 1735px;
+            padding: 60px;
+        }
+    }
 /* MEDIA QUERIES */
