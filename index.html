@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
     <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/root.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Página inicial</title>
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container" id="inicio">
             <div class="flex">
                 <div class="flex-column">
                     <a href="#" class="logo">
@@ -22,13 +24,13 @@
                 </div>
                 <div class="flex-column">
                     <nav>
-                        <span class="abrir-submenu mobile-element">Navegar  <i class="fas arrow-down"></i></span>
-                        <ul class="menu--area">
-                            <li class="item-ativo"><a href="#">Início</a></li>
-                            <li><a href="#">Séries</a></li>
-                            <li><a href="#">Filmes</a></li>
-                            <li><a href="#">Bombando</a></li>
-                            <li><a href="#">Minha lista</a></li>
+                        <span class="abrir-submenu mobile-element" onclick="menuOpen()">Navegar  <i class="fa fa-arrow-circle-down" aria-hidden="true"></i></span>
+                        <ul class="menu--area menu--close" id="menu--open">
+                            <li class="item-ativo"><a href="#inicio">Início</a></li>
+                            <li><a href="#secao-originais">Séries</a></li>
+                            <li><a href="#secao-continuar-assistindo">Filmes</a></li>
+                            <li><a href="#top10">Bombando</a></li>
+                            <li><a href="#secao-originais">Minha lista</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -42,15 +44,23 @@
         </div>
     </header>
     
-    <main class="pagina-inicial">
-        <section class="secao-destaque">
+    <main class="pagina-inicial" >
+
+        <!-- area da imagem trocar principal da função que sera trocada -->
+        <section id="imagemPrincipal" class="secao-destaque" style="background-image: url('./assets/img/movies/um-maluco-no-pedaco.jpg')">
             <div class="container">
                 <article class="secao-destaque-conteudo">
                     <figure>
-                        <img src="./assets/img/movies/um-maluco-no-pedaco-logo.png" alt="Título seção destaque">
-                        <figcaption class="hidden">Um Maluco no Pedaço</figcaption>
+
+                        <!-- logo da função trocar o logo -->
+                        <img class="logo-bg" src="./assets/img/movies/um-maluco-no-pedaco-logo.png" alt="Título seção destaque">
+
+                        <!-- titulo da função trocar-titulo -->
+                        <figcaption class="hidden titulo">Um Maluco no Pedaço</figcaption>
                     </figure>
-                    <p>A série conta a história de Will (Will Smith), um jovem de origem humilde que se muda para um luxuoso bairro na Califórnia. ... Contudo, por ser um garoto humilde e não ligar para os estudos, Will vive se comportando de maneira inadequada e provocando trapalhadas aos seus tios e primos na mansão.</p>
+                    
+                    <!-- decrição da função trocar descrição -->
+                    <p class="descricao">A série conta a história de Will (Will Smith), um jovem de origem humilde que se muda para um luxuoso bairro na Califórnia. ...Contudo, por ser um garoto humilde e não ligar para os estudos, Will vive se comportando de maneira inadequada e provocando trapalhadas aos seus tios e primos na mansão.</p>
                     <div class="secao-destaque-buttons">
                         <button class="assistir">
                             <i class="fas fa-play"></i>
@@ -70,48 +80,84 @@
                 <ul class="flex">
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/papel.jpg" alt="Nome programa">
+
+                            <!-- funções -->
+                            <!-- trocar imagem principal -->
+                            <!-- trocar titulo -->
+                            <!-- trocar descrição -->
+                            <!-- trocar logo  -->
+                            <figure 
+                            onclick="trocarImagem('papel-bg.jpg'),
+                            trocarTitulo('La casa de papel'),
+                            trocarDescricao('La casa de papel é uma série de televisão de drama policial espanhola criada por Álex Pina. A trama traça dois assaltos muito preparados liderados por um homem conhecido como O Professor, um na Casa da Moeda Real da Espanha e outro no Banco Central da Espanha.'),
+                            trocarLogo('papel-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/papel.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/amigas.jpg" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('ted.jpg'),
+                            trocarTitulo('ted'),
+                            trocarDescricao('Um ursinho de pelúcia desbocado e festeiro ganha vida e sabota as tentativas de seu companheiro humano de se tornar um adulto e casar com a namorada.'),
+                            trocarLogo('ted-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/ted.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/gg.jpg" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('um-maluco-no-pedaco.jpg'),
+                            trocarTitulo('Um Maluco no Pedaço'),
+                            trocarDescricao('A série conta a história de Will (Will Smith), um jovem de origem humilde que se muda para um luxuoso bairro na Califórnia. ...Contudo, por ser um garoto humilde e não ligar para os estudos, Will vive se comportando de maneira inadequada e provocando trapalhadas aos seus tios e primos na mansão.'),
+                            trocarLogo('um-maluco-no-pedaco-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/um-maluco-no-pedaco-min.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/papel.jpg" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('tedbundy.webp'),
+                            trocarTitulo('Ted Bundy: A Irresistível Face do Mal'),
+                            trocarDescricao('conta a história de Ted Bundy, serial killer que usava seu charme para atrair vítimas durante a década de 1970, nos Estados Unidos. O filme da Netflix mostra a vida de Bundy e Liz Kloepfer (Lily Collins), com quem ele namorou por muito tempo.'),
+                            trocarLogo('tedbundy-logo.webp')"
+                            >
+                                <img class="zoom" src="assets/img/movies/tedbundy.webp" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/amigas.jpg" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('lucifer-bg.jpg'),
+                            trocarTitulo('lucifer'),
+                            trocarDescricao('A série gira em torno de Lucifer Morningstar (interpretado por Tom Ellis), o Diabo em pessoa, que renuncia o seu trono no Inferno para tirar umas férias na cidade de Los Angeles, onde administra sua própria boate (a “Lux”) e se torna consultor da polícia.'),
+                            trocarLogo('lucifer-logo.png')" 
+                            >
+                                <img class="zoom" src="assets/img/movies/lucifer-bg.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/gg.jpg" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('vikings.jpg'),
+                            trocarTitulo('Vikings'),
+                            trocarDescricao('Vikings segue a vida de Ragnar Lothbrok (Travis Fimmel), o maior guerreiro da sua era. Lider de seu bando, com seus irmãos e sua família, ele ascende ao poder e torna-se Rei da tribo dos vikings.'),
+                            trocarLogo('vikings-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/vikings-min.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
@@ -121,52 +167,82 @@
         </section>
         <section class="secao-catalogo" id="secao-minha-lista">
             <div class="container">
-                <h2 class="secao-catalogo-titulo">Minha lista</h2>
+                <h2 class="secao-catalogo-titulo" id="top10">Top 10</h2>
                 <ul class="flex">
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/papel.jpg" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('vikings.jpg'),
+                            trocarTitulo('Vikings'),
+                            trocarDescricao('Vikings segue a vida de Ragnar Lothbrok (Travis Fimmel), o maior guerreiro da sua era. Lider de seu bando, com seus irmãos e sua família, ele ascende ao poder e torna-se Rei da tribo dos vikings.'),
+                            trocarLogo('vikings-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/vikings-min.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/amigas.jpg alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('lucifer-bg.jpg'),
+                            trocarTitulo('lucifer'),
+                            trocarDescricao('A série gira em torno de Lucifer Morningstar (interpretado por Tom Ellis), o Diabo em pessoa, que renuncia o seu trono no Inferno para tirar umas férias na cidade de Los Angeles, onde administra sua própria boate (a “Lux”) e se torna consultor da polícia.'),
+                            trocarLogo('lucifer-logo.png')" 
+                            >
+                                <img class="zoom" src="assets/img/movies/lucifer-bg.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/gg.jpg" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('tedbundy.webp'),
+                            trocarTitulo('Ted Bundy: A Irresistível Face do Mal'),
+                            trocarDescricao('conta a história de Ted Bundy, serial killer que usava seu charme para atrair vítimas durante a década de 1970, nos Estados Unidos. O filme da Netflix mostra a vida de Bundy e Liz Kloepfer (Lily Collins), com quem ele namorou por muito tempo.'),
+                            trocarLogo('tedbundy-logo.webp')"
+                            >
+                                <img class="zoom" src="assets/img/movies/tedbundy.webp" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/papel.jpg" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('um-maluco-no-pedaco.jpg'),
+                            trocarTitulo('Um Maluco no Pedaço'),
+                            trocarDescricao('A série conta a história de Will (Will Smith), um jovem de origem humilde que se muda para um luxuoso bairro na Califórnia. ...Contudo, por ser um garoto humilde e não ligar para os estudos, Will vive se comportando de maneira inadequada e provocando trapalhadas aos seus tios e primos na mansão.'),
+                            trocarLogo('um-maluco-no-pedaco-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/um-maluco-no-pedaco-min.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('ted.jpg'),
+                            trocarTitulo('ted'),
+                            trocarDescricao('Um ursinho de pelúcia desbocado e festeiro ganha vida e sabota as tentativas de seu companheiro humano de se tornar um adulto e casar com a namorada.'),
+                            trocarLogo('ted-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/ted.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
+                            <figure 
+                            onclick="trocarImagem('papel-bg.jpg'),
+                            trocarTitulo('La casa de papel'),
+                            trocarDescricao('La casa de papel é uma série de televisão de drama policial espanhola criada por Álex Pina. A trama traça dois assaltos muito preparados liderados por um homem conhecido como O Professor, um na Casa da Moeda Real da Espanha e outro no Banco Central da Espanha.'),
+                            trocarLogo('papel-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/papel.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
@@ -180,48 +256,78 @@
                 <ul class="flex">
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('papel-bg.jpg'),
+                            trocarTitulo('La casa de papel'),
+                            trocarDescricao('La casa de papel é uma série de televisão de drama policial espanhola criada por Álex Pina. A trama traça dois assaltos muito preparados liderados por um homem conhecido como O Professor, um na Casa da Moeda Real da Espanha e outro no Banco Central da Espanha.'),
+                            trocarLogo('papel-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/papel2.webp" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('um-maluco-no-pedaco.jpg'),
+                            trocarTitulo('Um Maluco no Pedaço'),
+                            trocarDescricao('A série conta a história de Will (Will Smith), um jovem de origem humilde que se muda para um luxuoso bairro na Califórnia. ...Contudo, por ser um garoto humilde e não ligar para os estudos, Will vive se comportando de maneira inadequada e provocando trapalhadas aos seus tios e primos na mansão.'),
+                            trocarLogo('um-maluco-no-pedaco-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/um-maluco-mid.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('papel-bg.jpg'),
+                            trocarTitulo('La casa de papel'),
+                            trocarDescricao('La casa de papel é uma série de televisão de drama policial espanhola criada por Álex Pina. A trama traça dois assaltos muito preparados liderados por um homem conhecido como O Professor, um na Casa da Moeda Real da Espanha e outro no Banco Central da Espanha.'),
+                            trocarLogo('papel-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/papel2.webp" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('um-maluco-no-pedaco.jpg'),
+                            trocarTitulo('Um Maluco no Pedaço'),
+                            trocarDescricao('A série conta a história de Will (Will Smith), um jovem de origem humilde que se muda para um luxuoso bairro na Califórnia. ...Contudo, por ser um garoto humilde e não ligar para os estudos, Will vive se comportando de maneira inadequada e provocando trapalhadas aos seus tios e primos na mansão.'),
+                            trocarLogo('um-maluco-no-pedaco-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/um-maluco-mid.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('papel-bg.jpg'),
+                            trocarTitulo('La casa de papel'),
+                            trocarDescricao('La casa de papel é uma série de televisão de drama policial espanhola criada por Álex Pina. A trama traça dois assaltos muito preparados liderados por um homem conhecido como O Professor, um na Casa da Moeda Real da Espanha e outro no Banco Central da Espanha.'),
+                            trocarLogo('papel-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/papel2.webp" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('um-maluco-no-pedaco.jpg'),
+                            trocarTitulo('Um Maluco no Pedaço'),
+                            trocarDescricao('A série conta a história de Will (Will Smith), um jovem de origem humilde que se muda para um luxuoso bairro na Califórnia. ...Contudo, por ser um garoto humilde e não ligar para os estudos, Will vive se comportando de maneira inadequada e provocando trapalhadas aos seus tios e primos na mansão.'),
+                            trocarLogo('um-maluco-no-pedaco-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/um-maluco-mid.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
@@ -234,49 +340,85 @@
                 <h2 class="secao-catalogo-titulo">Programas para toda a família</h2>
                 <ul class="flex">
                     <li class="flex-column">
-                        <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
+                        <a href="#inicio">
+
+                            <!-- funções -->
+                            <!-- trocar imagem principal -->
+                            <!-- trocar titulo -->
+                            <!-- trocar descrição -->
+                            <!-- trocar logo  -->
+                            <figure 
+                            onclick="trocarImagem('papel-bg.jpg'),
+                            trocarTitulo('La casa de papel'),
+                            trocarDescricao('La casa de papel é uma série de televisão de drama policial espanhola criada por Álex Pina. A trama traça dois assaltos muito preparados liderados por um homem conhecido como O Professor, um na Casa da Moeda Real da Espanha e outro no Banco Central da Espanha.'),
+                            trocarLogo('papel-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/papel.jpg" alt="Nome programa">
+                                <figcaption class="hidden">Nome programa</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li class="flex-column">
+                        <a href="#inicio">
+                            <figure
+                            onclick="trocarImagem('ted.jpg'),
+                            trocarTitulo('ted'),
+                            trocarDescricao('Um ursinho de pelúcia desbocado e festeiro ganha vida e sabota as tentativas de seu companheiro humano de se tornar um adulto e casar com a namorada.'),
+                            trocarLogo('ted-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/ted.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('um-maluco-no-pedaco.jpg'),
+                            trocarTitulo('Um Maluco no Pedaço'),
+                            trocarDescricao('A série conta a história de Will (Will Smith), um jovem de origem humilde que se muda para um luxuoso bairro na Califórnia. ...Contudo, por ser um garoto humilde e não ligar para os estudos, Will vive se comportando de maneira inadequada e provocando trapalhadas aos seus tios e primos na mansão.'),
+                            trocarLogo('um-maluco-no-pedaco-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/um-maluco-no-pedaco-min.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('tedbundy.webp'),
+                            trocarTitulo('Ted Bundy: A Irresistível Face do Mal'),
+                            trocarDescricao('conta a história de Ted Bundy, serial killer que usava seu charme para atrair vítimas durante a década de 1970, nos Estados Unidos. O filme da Netflix mostra a vida de Bundy e Liz Kloepfer (Lily Collins), com quem ele namorou por muito tempo.'),
+                            trocarLogo('tedbundy-logo.webp')"
+                            >
+                                <img class="zoom" src="assets/img/movies/tedbundy.webp" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('lucifer-bg.jpg'),
+                            trocarTitulo('lucifer'),
+                            trocarDescricao('A série gira em torno de Lucifer Morningstar (interpretado por Tom Ellis), o Diabo em pessoa, que renuncia o seu trono no Inferno para tirar umas férias na cidade de Los Angeles, onde administra sua própria boate (a “Lux”) e se torna consultor da polícia.'),
+                            trocarLogo('lucifer-logo.png')" 
+                            >
+                                <img class="zoom" src="assets/img/movies/lucifer-bg.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
                     </li>
                     <li class="flex-column">
                         <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
-                                <figcaption class="hidden">Nome programa</figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <li class="flex-column">
-                        <a href="#">
-                            <figure>
-                                <img src="assets/img/movies/" alt="Nome programa">
+                            <figure
+                            onclick="trocarImagem('vikings.jpg'),
+                            trocarTitulo('Vikings'),
+                            trocarDescricao('Vikings segue a vida de Ragnar Lothbrok (Travis Fimmel), o maior guerreiro da sua era. Lider de seu bando, com seus irmãos e sua família, ele ascende ao poder e torna-se Rei da tribo dos vikings.'),
+                            trocarLogo('vikings-logo.png')"
+                            >
+                                <img class="zoom" src="assets/img/movies/vikings-min.jpg" alt="Nome programa">
                                 <figcaption class="hidden">Nome programa</figcaption>
                             </figure>
                         </a>
@@ -301,17 +443,21 @@
                 </div>
                 <div class="flex-column">
                     <ul class="redes-sociais">
-                        <li><a href="#"><img src="./assets/img/facebook-app-logo.svg" alt="Facebook"></a></li>
-                        <li><a href="#"><img src="./assets/img/instagram-symbol.svg" alt="Instagram"></a></li>
-                        <li><a href="#"><img src="./assets/img/twitter.svg" alt="Twitter"></a></li>
+                        <li><a href="#"><img class="zoom" src="./assets/img/facebook-app-logo.svg" alt="Facebook"></a></li>
+                        <li><a href="#"><img class="zoom" src="./assets/img/instagram-symbol.svg" alt="Instagram"></a></li>
+                        <li><a href="#"><img class="zoom" src="./assets/img/twitter.svg" alt="Twitter"></a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
                 <p>&copy; 1997-2021 Netflix, Inc.</p>
+                <p><a href="https://github.com/RobsonMT">&copy; by RobsonMT</a></p>
             </div>
         </div>
     </footer>
+    <!-- js -->
+    <script src="./assets/js/script.js"></script>
+    <!-- icons -->
     <script src="https://kit.fontawesome.com/3b9072ba4d.js"  crossorigin="anonymous"></script>
 </body>
 </html>
